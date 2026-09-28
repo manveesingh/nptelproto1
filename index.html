@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>04 — Course / Projects</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#EEE5C2; --yellow:#FAD564; --lime:#D3DC7C; --sage:#8EBD9D; --navy:#1B475D;
+  --bg:#FFFDF8; --card:#FFFFFF; --line:#E9E3D0; --text:#233A44; --text2:#7A8890;
+  --on-navy:#FFFFFF; --on-yellow:#3A2E05; --radius:18px;
+  --sans:"Nunito Sans","Segoe UI",Arial,sans-serif;
+  --display:"Fredoka","Quicksand","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{color-scheme:light}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15.5px;line-height:1.62}
+a{color:var(--navy)}
+h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:600;letter-spacing:-.01em}
+p{margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+svg{display:block}
+header.top{border-bottom:1px solid var(--line);background:var(--card)}
+.top-in{display:flex;align-items:center;gap:20px;padding:16px 0;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px}
+.mark{width:38px;height:38px;border-radius:12px;background:var(--navy);display:grid;place-items:center}
+.logo b{font-family:var(--display);font-size:18px;font-weight:700;color:var(--navy)}
+.logo small{display:block;font-size:11px;color:var(--text2)}
+nav{display:flex;gap:2px;margin-left:auto;flex-wrap:wrap}
+nav a{padding:9px 14px;border-radius:10px;font-size:14px;font-weight:700;color:var(--text2);text-decoration:none;display:inline-block}
+nav a.cur{background:var(--cream);color:var(--navy)}
+.signin{background:var(--navy);color:var(--on-navy);border:0;border-radius:10px;padding:9px 18px;font-size:14px;font-weight:700}
+.btn{background:var(--navy);color:var(--on-navy);border:0;border-radius:12px;padding:11px 20px;font-size:14.5px;font-weight:700;display:inline-block;text-decoration:none}
+.btn.soft{background:var(--yellow);color:var(--on-yellow)}
+.btn.ghost{background:none;color:var(--navy);border:1.5px solid var(--line)}
+.btn.sm{padding:8px 15px;font-size:13.5px}
+.tiny{font-size:12.5px;color:var(--text2)}
+.crumb{font-size:13px;color:var(--text2);margin:22px 0 14px}
+.crumb a{color:var(--navy);font-weight:700;text-decoration:none}
+footer.foot{border-top:1px solid var(--line);padding:22px 0;font-size:12.5px;color:var(--text2);margin-top:40px}
+
+.chead2{position:relative;overflow:hidden;background:var(--navy);border-radius:22px;padding:26px 30px;color:#fff}
+.chead2 svg.blob{position:absolute}
+.chead2 h1{font-size:1.5rem;position:relative;z-index:1}
+.cmeta{display:flex;gap:16px;flex-wrap:wrap;margin-top:9px;font-size:13.5px;color:rgba(255,255,255,.78);position:relative;z-index:1}
+.progwrap{margin-top:16px;position:relative;z-index:1;max-width:280px}
+.progbar{height:8px;background:rgba(255,255,255,.2);border-radius:4px;overflow:hidden}
+.progbar i{display:block;height:100%;width:58%;background:var(--yellow);border-radius:4px}
+.progtxt{font-size:12px;color:rgba(255,255,255,.7);margin-top:6px}
+
+.tabs{display:flex;gap:6px;margin:22px 0 22px;flex-wrap:wrap}
+.tabs a{display:flex;align-items:center;gap:7px;background:var(--card);border:1.5px solid var(--line);border-radius:999px;padding:8px 16px 8px 12px;font-size:13.5px;font-weight:700;color:var(--text2);text-decoration:none}
+.tabs a.cur{background:var(--navy);border-color:var(--navy);color:#fff}
+.tabs a .ic{width:20px;height:20px;border-radius:6px;display:grid;place-items:center;background:#F2EFE3}
+.tabs a.cur .ic{background:rgba(255,255,255,.2)}
+
+.pnote{background:var(--cream);border-radius:var(--radius);padding:18px 20px;display:flex;gap:16px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:16px}
+.pnote p{max-width:62ch;font-size:14px;color:var(--text)}
+.pnote .cnt{font-size:12.5px;font-weight:800;color:#2F6A4E;background:#E7F2EC;padding:5px 11px;border-radius:999px;white-space:nowrap}
+
+.proj{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;display:flex;gap:16px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;margin-bottom:12px}
+.proj-l{display:flex;gap:14px}
+.proj-ic{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;flex:none}
+.proj h4{font-size:15px}
+.proj p{font-size:13.5px;color:var(--text2);margin-top:5px;max-width:52ch}
+.proj .m{display:flex;gap:9px;margin-top:9px;flex-wrap:wrap;align-items:center}
+.pill{font-size:11px;font-weight:800;padding:3px 9px;border-radius:999px}
+.pill.beg{background:#F2F5DE;color:#5C6A2A}
+.pill.int{background:#FEF3D6;color:var(--on-yellow)}
+.pill.adv{background:#F3E4E0;color:#8A4630}
+.pill.saved{background:#E7F2EC;color:#2F6A4E}
+.pill.locked{background:#F2EFE3;color:var(--text2)}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap top-in">
+  <div class="logo">
+    <div class="mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 8l9-4 9 4-9 4-9-4z" stroke="#FAD564" stroke-width="1.8" stroke-linejoin="round"/><path d="M7 11v4c0 1.5 2.2 3 5 3s5-1.5 5-3v-4" stroke="#FAD564" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+    <div><b>swayam</b><small>NPTEL</small></div>
+  </div>
+  <nav>
+    <a href="01-home.html">Explore</a>
+    <a href="02-pathway.html">My pathway</a>
+    <a class="cur" href="04-course.html">My courses</a>
+    <a href="06-mybuilds.html">My builds</a>
+  </nav>
+  <button class="signin">Sign in</button>
+</div></header>
+
+<main class="page"><div class="wrap">
+
+  <p class="crumb"><a href="01-home.html">Explore</a> / <a href="02-pathway.html">My pathway</a> / Introduction to Machine Learning</p>
+
+  <div class="chead2">
+    <svg class="blob" width="200" height="200" viewBox="0 0 200 200" style="top:-60px;right:-30px"><circle cx="100" cy="100" r="90" fill="#8EBD9D" opacity=".18"/></svg>
+    <h1>Introduction to Machine Learning</h1>
+    <div class="cmeta"><span>IIT Madras</span><span>8 weeks</span><span>Week 5 of 8</span></div>
+    <div class="progwrap">
+      <div class="progbar"><i></i></div>
+      <div class="progtxt">Week 5 of 8 complete</div>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <a href="#" class="tab"><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#7A8890" stroke-width="1.8"/></svg></span>About</a>
+    <a href="#" class="tab"><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="14" rx="2" stroke="#7A8890" stroke-width="1.8"/><path d="M4 9h16" stroke="#7A8890" stroke-width="1.8"/></svg></span>Course layout</a>
+    <a href="#" class="tab"><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#7A8890" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></span></span>Assignments</a>
+    <a href="#" class="tab cur"><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 3l2 5 5 .8-3.6 3.5.9 5.2L12 15l-4.3 2.5.9-5.2L5 8.8 10 8l2-5z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></span>Projects</a>
+  </div>
+
+  <div class="pnote">
+    <p><b>Build Track.</b> Projects are tied to weeks you've already finished. Each one starts guided, then reaches a point where you change the dataset, a feature, the use-case or the domain — that change is saved to My builds next to your certificate.</p>
+    <span class="cnt">1 build saved</span>
+  </div>
+
+  <div class="proj">
+    <div class="proj-l">
+      <div class="proj-ic" style="background:#F2F5DE">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h10M4 18h13" stroke="#5C6A2A" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <h4>Spam classifier</h4>
+        <p>Train a text classifier on a labelled message set, then change what it classifies.</p>
+        <div class="m"><span class="pill beg">Beginner</span><span class="tiny">Unlocked after week 3</span><span class="pill saved">Saved</span></div>
+      </div>
+    </div>
+    <a class="btn ghost sm" href="05-buildtrack.html">Open again</a>
+  </div>
+
+  <div class="proj">
+    <div class="proj-l">
+      <div class="proj-ic" style="background:#FEF3D6">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 18l6-8 4 5 6-9" stroke="#3A2E05" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <h4>Price prediction on real data</h4>
+        <p>Fit a regression model, then defend which features you kept and which you dropped.</p>
+        <div class="m"><span class="pill int">Intermediate</span><span class="tiny">Unlocked after week 4</span></div>
+      </div>
+    </div>
+    <a class="btn sm" href="05-buildtrack.html">Start building</a>
+  </div>
+
+  <div class="proj">
+    <div class="proj-l">
+      <div class="proj-ic" style="background:#F3E4E0">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="5" y="4" width="14" height="16" rx="2" stroke="#8A4630" stroke-width="1.8"/><circle cx="9" cy="9" r="1.4" fill="#8A4630"/><path d="M6 16l4-4 3 3 5-5" stroke="#8A4630" stroke-width="1.6"/></svg>
+      </div>
+      <div>
+        <h4>Image classifier from scratch</h4>
+        <p>Build a small image classifier and improve it through feature and model choices.</p>
+        <div class="m"><span class="pill adv">Advanced</span><span class="tiny">Unlocks after week 5</span><span class="pill locked">🔒 Locked</span></div>
+      </div>
+    </div>
+    <button class="btn ghost sm" disabled style="opacity:.5">Locked</button>
+  </div>
+
+</div></main>
+
+<footer class="foot"><div class="wrap">NPTEL · a joint initiative of the IITs and IISc</div></footer>
+
+</body>
+</html>
